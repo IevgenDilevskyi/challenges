@@ -12,6 +12,12 @@ app.get("/", (req, res) => {
   // res.redirect("/login");
 });
 
+app.get("/html", (req, res) => {
+  res.render("html");
+});
+
+app.set("view engine", "ejs");
+
 app.get("/urls", (req, res) => {
   const id = req.session.user_id;
   const filteredURLs = urlsForUser(id); // URLs that belong to current user
